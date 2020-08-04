@@ -6,6 +6,8 @@ import studyIcon from "../../assets/images/icons/study.svg";
 import giveClassesIcon from "../../assets/images/icons/give-classes.svg";
 import purpleHeartIcon from "../../assets/images/icons/purple-heart.svg";
 
+import "./style.css";
+
 export default function Landing() {
   return (
     <div id="page-landing">
