@@ -1,2 +1,2 @@
-import TeacherList from "./TeacherList";
-export default TeacherList;
+import PageHeader from "./TeacherList";
+export default PageHeader;
