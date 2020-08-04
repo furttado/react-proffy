@@ -1,9 +1,11 @@
 import express from "express";
+import db from "./data/connection";
+import ClassController from "./controllers/ClassController";
 
 const routes = express.Router();
+const classController = new ClassController();
 
-routes.get("/", (request, response) => {
-  return response.status(200).send({ success: "ok" });
-});
+routes.post("/classes", classController.create);
+routes.get("/classes", classController.listClasses);
 
 export default routes;
