@@ -22,7 +22,7 @@ const Select: React.FunctionComponent<SelectProps> = ({
           pick one
         </option>
         {options.map((option) => (
-          <option value={option.value} key={`${option}` + `${option.value}`}>
+          <option value={option.value} key={`${option} + ${option.value}`}>
             {option.label}
           </option>
         ))}

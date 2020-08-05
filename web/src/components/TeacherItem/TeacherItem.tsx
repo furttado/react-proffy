@@ -30,7 +30,7 @@ const TeacherItem: React.FunctionComponent<TeacherItemProps> = ({
   return (
     <article className="teacher-item">
       <header>
-        <img src={teacher.avatar} alt="image profile" />
+        <img src={teacher.avatar} alt="Teacher profile avatar" />
         <div>
           <strong>{teacher.name}</strong>
           <span>{teacher.course}</span>
@@ -44,6 +44,7 @@ const TeacherItem: React.FunctionComponent<TeacherItemProps> = ({
         </p>
         <a
           target="_blank"
+          rel="noopener noreferrer"
           onClick={createNewConnection}
           href={`https://wa.me/${teacher.whatsapp}?text=Hello%20There`}
         >
