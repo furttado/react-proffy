@@ -13,7 +13,7 @@ export default function TeacherList() {
   const [course, setCourse] = useState("");
   const [week_day, setWeekDay] = useState("");
   const [time, setTime] = useState("");
-
+  console.log(teachers);
   const getTeachers = async (e: FormEvent) => {
     e.preventDefault();
     try {
@@ -24,6 +24,10 @@ export default function TeacherList() {
           time,
         },
       });
+      if (response.data.length === 0) {
+        alert("No matchs for your search!");
+        return;
+      }
       setTeachers(response.data);
     } catch (err) {
       console.error(err);
@@ -80,9 +84,16 @@ export default function TeacherList() {
         </form>
       </PageHeader>
       <main>
-        {teachers.map((teacher: Teacher) => (
-          <TeacherItem key={teacher.id} teacher={teacher} />
-        ))}
+        {(teachers.length === 0 && (
+          <h2 style={{ textAlign: "center", marginTop: "15%" }}>
+            Nothing here yet :(
+            <br />
+            Try a search!
+          </h2>
+        )) ||
+          teachers.map((teacher: Teacher) => (
+            <TeacherItem key={teacher.id} teacher={teacher} />
+          ))}
       </main>
     </div>
   );
