@@ -1,13 +1,6 @@
 <h1 align="center">
-    <strong>Proffy</strong>
-    <br>
-  <h2 align="center">One place to connect learners and teachers.</h2>
-    <br>
-    <p align="center"><img src="https://i.ibb.co/TvhGw9Z/Group-11.png" alt="Proffy"></p>
-    <br>
-    <h2 align="center">
-        Next Level Week #2 - Rocketseat 🚀
-    </h2>
+<a href="https://github.com/furttado/react-proffy"><img src="https://i.ibb.co/qmjGsh1/Group-12.png" alt="Proffy"/></a>
+
 </h1>
 
 ## 📢 About
