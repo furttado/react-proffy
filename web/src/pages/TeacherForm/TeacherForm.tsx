@@ -2,6 +2,7 @@ import React from "react";
 import PageHeader from "../../components/PageHeader";
 
 import "./style.css";
+import Input from "../../components/Input";
 
 export default function TeacherForm() {
   return (
@@ -14,21 +15,9 @@ export default function TeacherForm() {
       <main>
         <fieldset>
           <legend>Your data</legend>
-
-          <div className="input-block">
-            <label htmlFor="name">Full name</label>
-            <input type="text" id="name" />
-          </div>
-
-          <div className="input-block">
-            <label htmlFor="avatar">Avatar</label>
-            <input type="text" id="avatar" />
-          </div>
-
-          <div className="input-block">
-            <label htmlFor="whatsapp">Whatsapp</label>
-            <input type="text" id="whatsapp" />
-          </div>
+          <Input name="name" label="Full name" type="text" />
+          <Input name="avatar" label="Avatar" type="url" />
+          <Input name="whatsapp" label="Whatsapp" type="number" />
         </fieldset>
       </main>
     </div>
