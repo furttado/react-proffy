@@ -4,6 +4,7 @@ import PageHeader from "../../components/PageHeader";
 import "./style.css";
 import Input from "../../components/Input";
 import warningIcon from "../../assets/images/icons/warning.svg";
+import TextArea from "../../components/TextArea";
 
 export default function TeacherForm() {
   return (
@@ -25,6 +26,7 @@ export default function TeacherForm() {
           <legend>About class</legend>
           <Input name="course" label="Course" type="text" />
           <Input name="cost" label="Cost per hour" type="number" />
+          <TextArea name="bio" label="Bio" />
         </fieldset>
 
         <footer>
