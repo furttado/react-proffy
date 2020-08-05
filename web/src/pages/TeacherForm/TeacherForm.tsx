@@ -3,6 +3,7 @@ import PageHeader from "../../components/PageHeader";
 
 import "./style.css";
 import Input from "../../components/Input";
+import warningIcon from "../../assets/images/icons/warning.svg";
 
 export default function TeacherForm() {
   return (
@@ -19,6 +20,21 @@ export default function TeacherForm() {
           <Input name="avatar" label="Avatar" type="url" />
           <Input name="whatsapp" label="Whatsapp" type="number" />
         </fieldset>
+
+        <fieldset>
+          <legend>About class</legend>
+          <Input name="course" label="Course" type="text" />
+          <Input name="cost" label="Cost per hour" type="number" />
+        </fieldset>
+
+        <footer>
+          <p>
+            <img src={warningIcon} alt="Important warning" />
+            Warning! <br />
+            Fill in all fields
+          </p>
+          <button>Apply</button>
+        </footer>
       </main>
     </div>
   );
