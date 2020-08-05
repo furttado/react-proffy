@@ -5,6 +5,7 @@ import "./style.css";
 import Input from "../../components/Input";
 import warningIcon from "../../assets/images/icons/warning.svg";
 import TextArea from "../../components/TextArea";
+import Select from "../../components/Select";
 
 export default function TeacherForm() {
   return (
@@ -24,7 +25,24 @@ export default function TeacherForm() {
 
         <fieldset>
           <legend>About class</legend>
-          <Input name="course" label="Course" type="text" />
+          <Select
+            name="course"
+            label="Course"
+            options={[
+              { value: "English", label: "English" },
+              { value: "Spanhish", label: "Spanhish" },
+              { value: "Portuguese", label: "Portuguese" },
+              { value: "Chinese", label: "Chinese" },
+              { value: "Greek", label: "Greek" },
+              { value: "Old Hebraic", label: "Old Hebraic" },
+              { value: "Arts", label: "Arts" },
+              { value: "Spanish", label: "Spanish" },
+              { value: "German", label: "German" },
+              { value: "French", label: "French" },
+              { value: "Chemistry", label: "Chemistry" },
+              { value: "Physics", label: "Physics" },
+            ]}
+          />
           <Input name="cost" label="Cost per hour" type="number" />
           <TextArea name="bio" label="Bio" />
         </fieldset>
