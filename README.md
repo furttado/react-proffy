@@ -1,12 +1,14 @@
-# <h1 align="center">Proffy</h1>
-
-<h2 align="center">Marketplace to connect learners and teachers</h2>
-
-## <h3 align="center">Next Level Week #2 - Rocketseat 🚀</h3>
-
-<img align="center" src="D:\GitHub - repositories\Web-Full-Stack\web-full-stack\Aulas\Resumos\typora_images\Group 11.png" />
-
-
+<h1 align="center">
+    <strong>Proffy</strong>
+    <br>
+  <h2 align="center">One place to connect learners and teachers.</h2>
+    <br>
+    <p align="center"><img src="https://i.ibb.co/TvhGw9Z/Group-11.png" alt="Proffy"></p>
+    <br>
+    <h2 align="center">
+        Next Level Week #2 - Rocketseat 🚀
+    </h2>
+</h1>
 
 ## 📢 About
 
