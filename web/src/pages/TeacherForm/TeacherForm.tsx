@@ -47,6 +47,30 @@ export default function TeacherForm() {
           <TextArea name="bio" label="Bio" />
         </fieldset>
 
+        <fieldset>
+          <legend>
+            Avaiable times
+            <button type="button">+ New time</button>
+          </legend>
+
+          <div className="schedule-item">
+            <Select
+              name="week_day"
+              label="Week day"
+              options={[
+                { value: "0", label: "Sunday" },
+                { value: "1", label: "Monday" },
+                { value: "2", label: "Tuesday" },
+                { value: "3", label: "Wednesday" },
+                { value: "4", label: "Thursday" },
+                { value: "5", label: "Friday" },
+                { value: "6", label: "Saturday" },
+              ]}
+            />
+            <Input name="from" label="From" type="time" />
+            <Input name="to" label="To" type="time" />
+          </div>
+        </fieldset>
         <footer>
           <p>
             <img src={warningIcon} alt="Important warning" />
