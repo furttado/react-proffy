@@ -6,6 +6,7 @@ import TeacherItem from "../../components/TeacherItem";
 import Input from "../../components/Input";
 import Select from "../../components/Select";
 import api from "../../services/api";
+import { Teacher } from "../../components/TeacherItem/TeacherItem";
 
 export default function TeacherList() {
   const [teachers, setTeachers] = useState([]);
@@ -79,9 +80,9 @@ export default function TeacherList() {
         </form>
       </PageHeader>
       <main>
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
+        {teachers.map((teacher: Teacher) => (
+          <TeacherItem key={teacher.id} teacher={teacher} />
+        ))}
       </main>
     </div>
   );
