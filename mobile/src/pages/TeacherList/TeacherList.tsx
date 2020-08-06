@@ -2,7 +2,7 @@ import React from "react";
 import { View, Image } from "react-native";
 
 import styles from "./styles";
-import PageHeader from "../../components";
+import PageHeader from "../../components/PageHeader";
 
 export default function TeacherList() {
   return (
