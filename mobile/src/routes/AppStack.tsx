@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import Landing from "../pages/Landing";
 import Teach from "../pages/Teach";
+import LearnTabs from "./LearnTabs";
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -17,6 +18,7 @@ function AppStack() {
       >
         <Screen name="Landing" component={Landing} />
         <Screen name="Teach" component={Teach} />
+        <Screen name="Learn" component={LearnTabs} />
       </Navigator>
     </NavigationContainer>
   );
