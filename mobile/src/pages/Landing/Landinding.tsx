@@ -27,6 +27,11 @@ export default function Landing() {
           <Text style={styles.buttonText}>Teach</Text>
         </TouchableOpacity>
       </View>
+
+      <Text style={styles.totalConnections}>
+        Total of 285 connections already made {" " /**/}
+        <Image source={heartIcon} />
+      </Text>
     </View>
   );
 }
