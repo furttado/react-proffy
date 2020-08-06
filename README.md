@@ -29,6 +29,8 @@ With **Proffy** the user must be able to choose between teaching and learning. S
 * CSS
 
 * ReactJS
+* React Native
+* Expo
 
 * TypeScript / JavaScript
 
@@ -43,6 +45,7 @@ With **Proffy** the user must be able to choose between teaching and learning. S
 * Knex
 
 * Express
+
 
   
 
