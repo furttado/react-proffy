@@ -1,0 +1,22 @@
+export default {
+  colors: {
+    background: "#f0f0f7",
+    primaryLight: "#916bea",
+    primaryLighter: "#9871f5",
+    primary: "#8257e5",
+    primaryDark: "#774dd6",
+    primaryDarker: "#6842c2",
+    secundary: "#04d361",
+    secundaryDark: "#04bf58",
+    titlePrimary: "#ffffff",
+    textPrimary: "#d4c2ff",
+    textTitle: "#32264d",
+    textComplement: "#9c98a6",
+    textBase: "#6a6180",
+    lineWhite: "#e6e6f0",
+    inputBg: "#f8f8fc",
+    buttontext: "#ffffff",
+    boxBase: "#ffffff",
+    boxFooter: "#fafafc",
+  },
+};
