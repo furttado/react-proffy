@@ -6,10 +6,31 @@ import styles from "./styles";
 import PageHeader from "../../components/PageHeader";
 import TeacherItem from "../../components/TeacherItem";
 import { ScrollView, TextInput, BorderlessButton, RectButton } from "react-native-gesture-handler";
-import { useLinkProps } from "@react-navigation/native";
+import api from "../../services/api";
 
 export default function TeacherList() {
   const [isFiltersVisible, setIsFiltersVisible] = useState(true);
+
+  const [teachers, setTeachers] = useState([]);
+  const [course, setCourse] = useState("");
+  const [week_day, setWeekDay] = useState("");
+  const [time, setTime] = useState("");
+
+  async function handleFilterSubmit() {
+    try {
+      const response = await api.get("classes", {
+        params: {
+          course,
+          week_day,
+          time,
+        },
+      });
+      console.log(response.data);
+      setTeachers(response.data);
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -25,8 +46,8 @@ export default function TeacherList() {
           <View style={styles.searchForm}>
             <Text style={styles.label}>Course</Text>
             <TextInput
-              value={""}
-              onChangeText={() => ""}
+              value={course}
+              onChangeText={(text) => setCourse(text)}
               style={styles.input}
               placeholder="Pick a course"
               placeholderTextColor="#c1bccc"
@@ -36,8 +57,8 @@ export default function TeacherList() {
               <View style={styles.inputBlock}>
                 <Text style={styles.label}>Week day</Text>
                 <TextInput
-                  value={""}
-                  onChangeText={() => ""}
+                  value={week_day}
+                  onChangeText={(text) => setWeekDay(text)}
                   style={styles.input}
                   placeholder="Pick a week day"
                   placeholderTextColor="#c1bccc"
@@ -47,15 +68,15 @@ export default function TeacherList() {
               <View style={styles.inputBlock}>
                 <Text style={styles.label}>Time</Text>
                 <TextInput
-                  value={""}
-                  onChangeText={() => ""}
+                  value={time}
+                  onChangeText={(text) => setTime(text)}
                   style={styles.input}
                   placeholder="Pick a time"
                   placeholderTextColor="#c1bccc"
                 />
               </View>
             </View>
-            <RectButton style={styles.submitButton} onPress={() => ""}>
+            <RectButton style={styles.submitButton} onPress={handleFilterSubmit}>
               <Text style={styles.submitButtonText}>Filter</Text>
             </RectButton>
           </View>
@@ -65,10 +86,9 @@ export default function TeacherList() {
         style={styles.teacherList}
         contentContainerStyle={{ paddingHorizontal: 16, paddingVertical: 16 }}
       >
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
+        {teachers.map((teacher) => (
+          <TeacherItem />
+        ))}
       </ScrollView>
     </View>
   );
