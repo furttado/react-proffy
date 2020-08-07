@@ -1,16 +1,54 @@
-import React from "react";
-import { View, Image } from "react-native";
+import React, { useState } from "react";
+import { View, Image, Text } from "react-native";
 
 import styles from "./styles";
 import PageHeader from "../../components/PageHeader";
 import TeacherItem from "../../components/TeacherItem";
-import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView, TextInput } from "react-native-gesture-handler";
 import { useLinkProps } from "@react-navigation/native";
 
 export default function TeacherList() {
+  const [isFiltersVisible, setIsFiltersVisible] = useState(true);
   return (
     <View style={styles.container}>
-      <PageHeader title={"Available Proffys"}></PageHeader>
+      <PageHeader title={"Available Proffys"}>
+        {isFiltersVisible && (
+          <View style={styles.searchForm}>
+            <Text style={styles.label}>Course</Text>
+            <TextInput
+              value={""}
+              onChangeText={() => ""}
+              style={styles.input}
+              placeholder="Pick a course"
+              placeholderTextColor="#c1bccc"
+            />
+
+            <View style={styles.inputGroup}>
+              <View style={styles.inputBlock}>
+                <Text style={styles.label}>Week day</Text>
+                <TextInput
+                  value={""}
+                  onChangeText={() => ""}
+                  style={styles.input}
+                  placeholder="Pick a week day"
+                  placeholderTextColor="#c1bccc"
+                />
+              </View>
+
+              <View style={styles.inputBlock}>
+                <Text style={styles.label}>Time</Text>
+                <TextInput
+                  value={""}
+                  onChangeText={() => ""}
+                  style={styles.input}
+                  placeholder="Pick a time"
+                  placeholderTextColor="#c1bccc"
+                />
+              </View>
+            </View>
+          </View>
+        )}
+      </PageHeader>
       <ScrollView
         style={styles.teacherList}
         contentContainerStyle={{ paddingHorizontal: 16, paddingVertical: 16 }}
