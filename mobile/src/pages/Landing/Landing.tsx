@@ -15,11 +15,14 @@ export default function Landing() {
 
   const [totalConnections, setTotalConnections] = useState(0);
 
+  async function getTotalConnections() {
+    const response = await api.get("connections");
+    const { total } = response.data;
+    setTotalConnections(total);
+  }
+
   useEffect(() => {
-    async function getTotalConnections() {
-      const response = await api.get("connections");
-      const { total } = response.data;
-    }
+    getTotalConnections();
   }, []);
 
   function handleNavigateToTeachPage() {
@@ -64,13 +67,3 @@ export default function Landing() {
     </View>
   );
 }
-
-/**
- <RectButton
-          onPress={handleNavigateToGiveClssesPage}
-          style={[styles.button, styles.buttonSecondary]}
-        >
-          <Image source={giveClassesIcon} />
-          <Text style={styles.buttonText}>Dar aulas</Text>
-        </RectButton>
- */
