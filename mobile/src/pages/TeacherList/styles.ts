@@ -35,6 +35,20 @@ const styles = StyleSheet.create({
     marginTop: 4,
     marginBottom: 16,
   },
+  submitButton: {
+    backgroundColor: "#04d361",
+    height: 56,
+    borderRadius: 8,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  submitButtonText: {
+    color: "#fff",
+    fontFamily: "Archivo_700Bold",
+    fontSize: 16,
+  },
 });
 
 export default styles;

@@ -5,7 +5,7 @@ import { Feather } from "@expo/vector-icons";
 import styles from "./styles";
 import PageHeader from "../../components/PageHeader";
 import TeacherItem from "../../components/TeacherItem";
-import { ScrollView, TextInput, BorderlessButton } from "react-native-gesture-handler";
+import { ScrollView, TextInput, BorderlessButton, RectButton } from "react-native-gesture-handler";
 import { useLinkProps } from "@react-navigation/native";
 
 export default function TeacherList() {
@@ -55,6 +55,9 @@ export default function TeacherList() {
                 />
               </View>
             </View>
+            <RectButton style={styles.submitButton} onPress={() => ""}>
+              <Text style={styles.submitButtonText}>Filter</Text>
+            </RectButton>
           </View>
         )}
       </PageHeader>
