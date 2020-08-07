@@ -46,9 +46,11 @@ export default function TeacherList() {
     });
   }
 
-  useFocusEffect(() => {
-    loadFavorites();
-  });
+  useFocusEffect(
+    React.useCallback(() => {
+      loadFavorites();
+    }, [])
+  );
 
   return (
     <View style={styles.container}>
