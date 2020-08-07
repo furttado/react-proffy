@@ -1,11 +1,12 @@
 import React from "react";
-import { View, Image, Text } from "react-native";
+import { View, Image, Text, Linking } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
 import styles from "./styles";
 
 import heartOutlineIcon from "../../assets/images/icons/heart-outline.png";
 import unfavoriteIcon from "../../assets/images/icons/unfavorite.png";
 import whatsappIcon from "../../assets/images/icons/whatsapp.png";
+import api from "../../services/api";
 
 export interface Teacher {
   id: number;
@@ -22,7 +23,10 @@ interface TeacherItemProps {
 }
 
 const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
-  const handleLinkToWhatsapp = () => {};
+  const handleLinkToWhatsapp = () => {
+    // deep link
+    Linking.openURL(`whatsapp://send?phone=${teacher.whatsapp}`);
+  };
   const handleToggleFavorite = () => {};
 
   return (
