@@ -18,5 +18,6 @@ export default {
     buttontext: "#ffffff",
     boxBase: "#ffffff",
     boxFooter: "#fafafc",
+    fontColorPrimary: "#333",
   },
 };

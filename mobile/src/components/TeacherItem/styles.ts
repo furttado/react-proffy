@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
+import { TouchableOpacity } from "react-native";
 
 export const Container = styled.View`
   background-color: #ffffff;
@@ -8,28 +9,52 @@ export const Container = styled.View`
   margin: 5%;
   border-radius: 10px;
 `;
-//  border-radius: 0.8rem;
 
 export const Header = styled.View`
-  padding: 3.2rem 2rem;
-  display: flex;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const TextContent = styled.Text`
+  margin-top: 20;
+  text-align: justify;
+  font-size: 15;
 `;
 
 export const Avatar = styled.Image`
-  width: 8rem;
-  height: 8rem;
-  border-radius: 4rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
 `;
 
-export const Content = styled.View``;
-export const Strong = styled.Text`
-  color: ${({ theme }) => theme.colors.primaryLight};
+export const Price = styled.Text`
+  margin-top: 20;
+  text-align: center;
+  font-size: 17;
 `;
+
+export const Strong = styled.Text`
+  color: ${({ theme }) => theme.colors.fontColorPrimary};
+  font-size: 30;
+  font-weight: bold;
+`;
+export const Footer = styled.View`
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20;
+`;
+
+export const Button = styled.TouchableOpacity`
+  flex-direction: row;
+  background-color: red;
+  margin-right: 20;
+  padding: 3%;
+  border-radius: 5px;
+  align-items: center;
+`;
+
 export const Course = styled.Text``;
 export const Bio = styled.Text``;
 
-export const Footer = styled.View``;
-export const Price = styled.Text``;
-export const Button = styled.TouchableOpacity``;
 export const WhatsAppIcon = styled.Image``;
