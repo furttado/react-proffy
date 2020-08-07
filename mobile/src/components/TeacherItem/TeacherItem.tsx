@@ -7,17 +7,21 @@ import heartOutlineIcon from "../../assets/images/icons/heart-outline.png";
 import unfavoriteIcon from "../../assets/images/icons/unfavorite.png";
 import whatsappIcon from "../../assets/images/icons/whatsapp.png";
 
-const teacher = {
-  avatar:
-    "https://coisasdatv.com.br/wp-content/uploads/2020/07/severus-snape-3-by-speedportraits-d75hn8x_z1sn.jpg",
-  name: "Severus Snape",
-  course: "Defence Against the Dark Arts",
-  cost: 200,
-  bio:
-    "I served as Potions Master (1981-1996), Defence Against the Dark Arts professor (1996-1997), and Headmaster (1997-1998) of the Hogwarts School of Witchcraft and Wizardry as well as a member of the Order of the Phoenix and a Death Eater.",
-};
+export interface Teacher {
+  id: number;
+  avatar: string;
+  bio: string;
+  cost: number;
+  name: string;
+  course: string;
+  whatsapp: number;
+}
 
-function TeacherItem() {
+interface TeacherItemProps {
+  teacher: Teacher;
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
   const handleLinkToWhatsapp = () => {};
   const handleToggleFavorite = () => {};
 
@@ -57,6 +61,6 @@ function TeacherItem() {
       </View>
     </View>
   );
-}
+};
 
 export default TeacherItem;

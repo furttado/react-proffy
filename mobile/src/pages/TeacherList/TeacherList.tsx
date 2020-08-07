@@ -4,12 +4,12 @@ import { Feather } from "@expo/vector-icons";
 
 import styles from "./styles";
 import PageHeader from "../../components/PageHeader";
-import TeacherItem from "../../components/TeacherItem";
+import TeacherItem, { Teacher } from "../../components/TeacherItem";
 import { ScrollView, TextInput, BorderlessButton, RectButton } from "react-native-gesture-handler";
 import api from "../../services/api";
 
 export default function TeacherList() {
-  const [isFiltersVisible, setIsFiltersVisible] = useState(true);
+  const [isFiltersVisible, setIsFiltersVisible] = useState(false);
 
   const [teachers, setTeachers] = useState([]);
   const [course, setCourse] = useState("");
@@ -25,7 +25,7 @@ export default function TeacherList() {
           time,
         },
       });
-      console.log(response.data);
+      setIsFiltersVisible(false);
       setTeachers(response.data);
     } catch (err) {
       console.error(err);
@@ -86,8 +86,8 @@ export default function TeacherList() {
         style={styles.teacherList}
         contentContainerStyle={{ paddingHorizontal: 16, paddingVertical: 16 }}
       >
-        {teachers.map((teacher) => (
-          <TeacherItem />
+        {teachers.map((teacher: Teacher) => (
+          <TeacherItem key={teacher.id} teacher={teacher} />
         ))}
       </ScrollView>
     </View>
