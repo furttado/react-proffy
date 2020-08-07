@@ -1,17 +1,26 @@
 import React, { useState } from "react";
 import { View, Image, Text } from "react-native";
+import { Feather } from "@expo/vector-icons";
 
 import styles from "./styles";
 import PageHeader from "../../components/PageHeader";
 import TeacherItem from "../../components/TeacherItem";
-import { ScrollView, TextInput } from "react-native-gesture-handler";
+import { ScrollView, TextInput, BorderlessButton } from "react-native-gesture-handler";
 import { useLinkProps } from "@react-navigation/native";
 
 export default function TeacherList() {
   const [isFiltersVisible, setIsFiltersVisible] = useState(true);
+
   return (
     <View style={styles.container}>
-      <PageHeader title={"Available Proffys"}>
+      <PageHeader
+        title={"Available Proffys"}
+        headerRight={
+          <BorderlessButton onPress={() => setIsFiltersVisible(!isFiltersVisible)}>
+            <Feather name="filter" size={20} color="#fff" />
+          </BorderlessButton>
+        }
+      >
         {isFiltersVisible && (
           <View style={styles.searchForm}>
             <Text style={styles.label}>Course</Text>
