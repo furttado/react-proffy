@@ -41,8 +41,12 @@ function TeacherItem() {
         </Text>
 
         <View style={styles.buttonsContainer}>
-          <RectButton onPress={handleToggleFavorite} style={styles.favoriteButton}>
-            <Image source={heartOutlineIcon} />
+          <RectButton
+            onPress={handleToggleFavorite}
+            style={[styles.favoriteButton, styles.favorited]}
+          >
+            {/* <Image source={heartOutlineIcon} /> */}
+            <Image source={unfavoriteIcon} />
           </RectButton>
 
           <RectButton onPress={handleLinkToWhatsapp} style={styles.contactButton}>
