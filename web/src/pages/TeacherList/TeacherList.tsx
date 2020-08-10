@@ -13,7 +13,7 @@ export default function TeacherList() {
   const [course, setCourse] = useState("");
   const [week_day, setWeekDay] = useState("");
   const [time, setTime] = useState("");
-  console.log(teachers);
+
   const getTeachers = async (e: FormEvent) => {
     e.preventDefault();
     try {
@@ -91,9 +91,7 @@ export default function TeacherList() {
             Try a search!
           </h2>
         )) ||
-          teachers.map((teacher: Teacher) => (
-            <TeacherItem key={teacher.id} teacher={teacher} />
-          ))}
+          teachers.map((teacher: Teacher) => <TeacherItem key={teacher.id} teacher={teacher} />)}
       </main>
     </div>
   );
