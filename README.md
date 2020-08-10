@@ -40,16 +40,12 @@ With **Proffy** the user must be able to choose between teaching and learning. S
 
 * SQL (sqlite)
 
-* Migrations
-
 * Knex
 
 * Express
 
 
-  
 
-  
 
 ## ⬇️ Clone this project
 
